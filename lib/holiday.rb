@@ -36,7 +36,7 @@ end
 def add_supply_to_memorial_day(holiday_hash, supply)
   # again, holiday_hash is the same as the ones above
   # add the second argument to the memorial day array
-  
+
   holiday_hash[:spring][:memorial_day] << supply
 
 end
@@ -54,7 +54,7 @@ def all_winter_holiday_supplies(holiday_hash)
   list = []
   holiday_hash.each_key do |x|
     holiday_hash[x].each_key do |y|
-      binding.pry
+      #binding.pry
       holiday_hash[x][y].each do |z|
         list << z
       end
@@ -73,6 +73,23 @@ def all_supplies_in_holidays(holiday_hash)
   #   Fourth Of July: Fireworks, BBQ
   # etc.
 
+  list_string = ""
+  holiday_hash.each_key do |x|
+    binding.pry
+    holiday_hash[x].each_key do |y|
+      binding.pry
+      holiday_hash[x][y].each_entry do |z|
+        binding.pry
+        list_string += holiday_hash[x].to_s
+        list_string += ": \n"
+        list_string += holiday_hash[x][y].to_s + ": \n"
+        holiday_hash[x][y].each_key {|k| list_string += holiday_hash[x][y][z].to_s+ ", "}
+        binding.pry
+        list_string.chomp(-2)
+      end
+    end
+  end
+  puts list_string
 end
 
 def all_holidays_with_bbq(holiday_hash)
@@ -80,10 +97,3 @@ def all_holidays_with_bbq(holiday_hash)
   # include the string "BBQ"
 
 end
-
-
-
-
-
-
-
