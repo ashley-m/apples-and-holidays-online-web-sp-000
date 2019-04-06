@@ -77,9 +77,9 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each_key do |x|
     holiday_hash[x].each_key do |y|
       holiday_hash[x][y].each_entry do |z|
-        list_string += "#{holiday_hash[x]}"
-        list_string += ": \n"
-        list_string += "#{holiday_hash[x][y]}" << ": \n"
+        list_string << "#{holiday_hash[x]}"
+        list_string << ": \n"
+        list_string << "#{holiday_hash[x][y]}" << ": \n"
         holiday_hash[x][y].each_entry {|k| list_string << "#{holiday_hash[x][y][k]}, "}
         list_string.chomp(-2)
       end
