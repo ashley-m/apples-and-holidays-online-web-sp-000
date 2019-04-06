@@ -80,7 +80,7 @@ def all_supplies_in_holidays(holiday_hash)
         list_string += holiday_hash[x].to_s
         list_string += ": \n"
         list_string += holiday_hash[x][y].to_s << ": \n"
-        holiday_hash[x][y].each_entry {|k| list_string += holiday_hash[x][y][z].to_s.}
+        holiday_hash[x][y].each_entry {|k| list_string += holiday_hash[x][y][z].to_s}
         list_string.chomp(", ")
       end
     end
