@@ -75,16 +75,13 @@ def all_supplies_in_holidays(holiday_hash)
 
   list_string = ""
   holiday_hash.each_key do |x|
-    binding.pry
     holiday_hash[x].each_key do |y|
-      binding.pry
       holiday_hash[x][y].each_entry do |z|
         binding.pry
         list_string += holiday_hash[x].to_s
         list_string += ": \n"
         list_string += holiday_hash[x][y].to_s + ": \n"
         holiday_hash[x][y].each_key {|k| list_string += holiday_hash[x][y][z].to_s+ ", "}
-        binding.pry
         list_string.chomp(-2)
       end
     end
